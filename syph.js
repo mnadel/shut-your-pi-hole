@@ -7,7 +7,7 @@ class Syph {
         chrome.contextMenus.create({
             title: "Disable Pi-hole", 
             contexts: [
-                "all"
+                "page_action"
             ],
             id: this.ContextMenuID
         })
