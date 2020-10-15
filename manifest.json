@@ -1,0 +1,26 @@
+{
+    "name": "Shut Your Pi-Hole",
+    "description": "Quickly enable Pi-hole bypass.",
+    "version": "0.1",
+    "manifest_version": 2,
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "icons": {
+        "16": "syph16.png",
+        "48": "syph48.png",
+       "128": "syph128.png"
+    },
+    "permissions": [
+        "storage",
+        "contextMenus"
+    ],
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "storage.js",
+            "syph.js"
+        ]
+    }
+}

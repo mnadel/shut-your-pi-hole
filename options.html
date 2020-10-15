@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shut Your Pi-hole - Options</title>
+    </head>
+    <body>
+        <table cellpadding="3">
+            <tr>
+                <td></td>
+                <td id="options-status">Configure...</td>
+            </tr>
+            <tr>
+                <td align="right">API URL</td>
+                <td><input type="text" size="50" id="options-url"></td>
+            </tr>
+            <tr>
+                <td align="right">Auth Token</td>
+                <td><input type="text" size="25" id="options-auth"></td>
+            </tr>
+            <tr>
+                <td align="right">Disable Time</td>
+                <td><input type="text" size="25" id="options-ttl"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="options-save">Save</button></td>
+            </tr>
+        </table>
+        <script src="storage.js"></script>
+        <script src="options.js"></script>
+    </body>
+</html>
