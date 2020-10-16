@@ -1,7 +1,7 @@
 {
     "name": "Shut Your Pi-Hole",
-    "description": "Quickly enable Pi-hole bypass.",
-    "version": "0.1",
+    "description": "Temporarily disable your Pi-hole",
+    "version": "0.2",
     "manifest_version": 2,
     "options_ui": {
         "page": "options.html",
@@ -17,7 +17,7 @@
         "contextMenus"
     ],
     "background": {
-        "persistent": true,
+        "persistent": false,
         "scripts": [
             "storage.js",
             "syph.js"
