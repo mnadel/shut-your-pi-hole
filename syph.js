@@ -4,7 +4,7 @@ class Syph {
             id: "Syph-Menu",
             title: "Disable Pi-hole", 
             contexts: [
-                "page_action"
+                "all"
             ]
         })
 

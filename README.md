@@ -21,5 +21,6 @@ containing this repo's `manifest.json` file.
 
 | Version | Changes |
 | --      | --      |
+| 0.3     | Expose menu item when right-clicking |
 | 0.2     | Change plugin to not persistently run in the background |
 | 0.1     | Initial release |
