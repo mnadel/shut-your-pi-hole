@@ -1,9 +1,8 @@
 class Storage {
     load = (callback) => {
-        // names of options and their default values
         chrome.storage.local.get({
             url: null,
-            ttl: null,
+            ttl: "30",
             auth: null
         }, (items) => {
             callback(items)
@@ -13,7 +12,7 @@ class Storage {
     save = (data, callback) => {
         chrome.storage.local.set({
             url: data.url,
-            ttl: data.ttl,
+            ttl: data.ttl || "30",
             auth: data.auth
         }, callback)
     }

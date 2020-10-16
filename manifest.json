@@ -1,7 +1,7 @@
 {
     "name": "Shut Your Pi-Hole",
     "description": "Temporarily disable your Pi-hole",
-    "version": "0.2",
+    "version": "0.4",
     "manifest_version": 2,
     "options_ui": {
         "page": "options.html",

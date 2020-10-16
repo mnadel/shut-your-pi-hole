@@ -11,6 +11,8 @@ document.getElementById("options-save").addEventListener("click", () => {
 
         status.textContent = "Saved!"
 
+        syph.optionsUpdated(opts)
+
         setTimeout(() => {
             status.textContent = currStatus
         }, 1000)

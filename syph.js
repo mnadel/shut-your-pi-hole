@@ -1,14 +1,31 @@
+const SYPH_MENUITEM_ID = "Syph-Menu";
+
 class Syph {
     constructor() {
-        chrome.contextMenus.create({
-            id: "Syph-Menu",
-            title: "Disable Pi-hole", 
-            contexts: [
-                "all"
-            ]
-        })
+        storage.load(config => {
+            // this allows for reloading of the extension w/o error
+            chrome.contextMenus.removeAll()
 
-        chrome.contextMenus.onClicked.addListener(this.clicked)
+            chrome.contextMenus.create({
+                id: SYPH_MENUITEM_ID,
+                title: this.contextMenuTitle(config),
+                contexts: [
+                    "all"
+                ]
+            })
+
+            chrome.contextMenus.onClicked.addListener(this.clicked)
+        })
+    }
+
+    contextMenuTitle = (config) => {
+        return `Disable Pi-hole (for ${config.ttl}s)`
+    }
+
+    optionsUpdated = (config) => {
+        chrome.contextMenus.update(SYPH_MENUITEM_ID, {
+            title: this.contextMenuTitle(config)
+        })
     }
 
     clicked = (_) => {
