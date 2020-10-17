@@ -1,11 +1,20 @@
 {
     "name": "Shut Your Pi-Hole",
     "description": "Temporarily disable your Pi-hole",
-    "version": "0.4",
+    "version": "0.5",
     "manifest_version": 2,
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "syph16.png",
+            "48": "syph48.png",
+            "128": "syph128.png"
+        },
+        "default_title": "Shut Your Pi-hole",
+        "default_popup": "syph.html"
     },
     "icons": {
         "16": "syph16.png",
@@ -13,14 +22,6 @@
        "128": "syph128.png"
     },
     "permissions": [
-        "storage",
-        "contextMenus"
-    ],
-    "background": {
-        "persistent": false,
-        "scripts": [
-            "storage.js",
-            "syph.js"
-        ]
-    }
+        "storage"
+    ]
 }

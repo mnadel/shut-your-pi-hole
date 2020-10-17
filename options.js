@@ -1,7 +1,6 @@
 document.getElementById("options-save").addEventListener("click", () => {
     const opts = {
         url: document.getElementById("options-url").value,
-        ttl: document.getElementById("options-ttl").value,
         auth: document.getElementById("options-auth").value
     }
 
@@ -11,8 +10,6 @@ document.getElementById("options-save").addEventListener("click", () => {
 
         status.textContent = "Saved!"
 
-        syph.optionsUpdated(opts)
-
         setTimeout(() => {
             status.textContent = currStatus
         }, 1000)
@@ -21,6 +18,5 @@ document.getElementById("options-save").addEventListener("click", () => {
 
 storage.load((items) => {
     document.getElementById("options-url").value = items.url
-    document.getElementById("options-ttl").value = items.ttl
     document.getElementById("options-auth").value = items.auth
 })

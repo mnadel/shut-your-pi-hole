@@ -1,47 +1,40 @@
-const SYPH_MENUITEM_ID = "Syph-Menu";
-
 class Syph {
-    constructor() {
+    disable = (ttl) => {
         storage.load(config => {
-            // this allows for reloading of the extension w/o error
-            chrome.contextMenus.removeAll()
-
-            chrome.contextMenus.create({
-                id: SYPH_MENUITEM_ID,
-                title: this.contextMenuTitle(config),
-                contexts: [
-                    "all"
-                ]
-            })
-
-            chrome.contextMenus.onClicked.addListener(this.clicked)
-        })
-    }
-
-    contextMenuTitle = (config) => {
-        return `Disable Pi-hole (for ${config.ttl}s)`
-    }
-
-    optionsUpdated = (config) => {
-        chrome.contextMenus.update(SYPH_MENUITEM_ID, {
-            title: this.contextMenuTitle(config)
-        })
-    }
-
-    clicked = (_) => {
-        storage.load(config => {
-            const url = `${config.url}?disable=${config.ttl}&auth=${config.auth}`
+            const url = `${config.url}?disable=${ttl}&auth=${config.auth}`
             const fetchConfig = {
                 mode: "no-cors"
             }
 
             fetch(url, fetchConfig).then((_) => {
-                console.log("Pi-hole has been disabled")
+                console.log(`Pi-hole disabled for ${ttl}s`)
+                this.closePopups()
             }).catch((error) => {
-                console.log("Error shutting down Pi-hole", error)
+                console.log(error)
+                this.closePopups()
+                alert("Error disabling Pi-hole")
             })
+        })
+    }
+
+    closePopups = () => {
+        var popups = chrome.extension.getViews({type: "popup"})
+        popups.forEach((popup) => {
+            popup.close()
         })
     }
 }
 
 const syph = new Syph()
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById("menu")
+    if (menu) {
+        for (let i = 0; i < menu.children.length; i++) {
+            let child = menu.children[i]
+            child.addEventListener("click", () => {
+                syph.disable(child.id)
+            })
+        }
+    }
+})
