@@ -15,7 +15,6 @@ containing this repo's `manifest.json` file.
 
 1. Enter your Pi-hole API URL (e.g. http://pi-hole/admin/api.php)
 1. Enter your Pi-hole API Token (Settings > API/Web Interface > Show API token)
-1. Enter the time in seconds to disable your Pi-hole
 
 # Changelog
 

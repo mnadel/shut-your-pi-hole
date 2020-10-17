@@ -3,7 +3,7 @@
     padding: 4px;
     cursor: hand;
     color: #555;
-    width: 250;
+    width: 90px;
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: 5px 5px;
@@ -24,4 +24,5 @@
 #selected-menu-item, .menu-item:hover {
     color: #11A;
     background-color: #f2f2f2;
+    cursor: pointer;
 }
