@@ -18,7 +18,7 @@ containing this repo's `manifest.json` file.
 
 ## Nota Bene
 
-If you're going to use a local DNS entry for your Pi-hole, you should use `pi.hole`. It's what Pi-hole's local webserver responds to. Any other name and you'll probably have XSS issues.
+If you're seeing XSS issues try adding a local DNS entry for your Pi called `pi.hole` and using that as your endpoint URL domain name. 
 
 # Changelog
 
