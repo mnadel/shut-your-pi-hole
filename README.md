@@ -13,8 +13,12 @@ containing this repo's `manifest.json` file.
 
 # Configuring
 
-1. Enter your Pi-hole API URL (e.g. http://pi-hole/admin/api.php)
+1. Enter your Pi-hole API URL (e.g. http://pi.hole/admin/api.php)
 1. Enter your Pi-hole API Token (Settings > API/Web Interface > Show API token)
+
+## Nota Bene
+
+If you're going to use a local DNS entry for your Pi-hole, you should use `pi.hole`. It's what Pi-hole's local webserver responds to. Any other name and you'll probably have XSS issues.
 
 # Changelog
 
