@@ -18,7 +18,7 @@ containing this repo's `manifest.json` file.
 
 ## Nota Bene
 
-If you're seeing XSS issues try adding a local DNS entry for your Pi called `pi.hole` and using that as your endpoint URL domain name. 
+If you're seeing XSS issues try adding a local DNS entry in Pi-hole for your Pi called `pi.hole` and using that as your endpoint URL domain name. 
 
 # Changelog
 
